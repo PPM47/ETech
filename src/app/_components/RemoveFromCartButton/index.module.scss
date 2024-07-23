@@ -1,0 +1,20 @@
+@import '../../_css/common';
+
+.removeFromCartButton {
+  all: unset;
+  cursor: pointer;
+
+}
+.deleteBtn{
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn{
+  outline: none;
+  background-color: transparent;
+  border: none;
+}
+.btn:hover{
+  
+  transform: scale(1.1);
+}

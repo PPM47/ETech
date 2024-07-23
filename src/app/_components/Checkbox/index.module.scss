@@ -1,0 +1,38 @@
+@import '../../_css/common';
+
+.checkboxWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.checkbox {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 5px;
+  backdrop-filter: blur(35px);
+  background-color: rgba(41, 41, 41, 0.349);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.452);
+  border: 2px solid var(--color-base-0);
+  outline: none;
+  cursor: pointer;
+}
+
+.checkbox:checked {
+  background-color: var(--color-dark-500);
+  position: relative;
+}
+
+.checkbox:checked::before {
+  content: '\2713';
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--color-base-0);
+  position: absolute;
+  right: 5px;
+  top: 0;
+}

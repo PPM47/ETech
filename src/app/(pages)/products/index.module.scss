@@ -1,0 +1,25 @@
+@import "../../_css/common";
+
+
+.proContiner{
+    // border: solid 1px white;
+    width: 100%;
+    margin-top: calc(var(--base) * 2);
+}
+.products{
+    display: grid;
+    grid-template-columns: 1fr 75%;
+    gap: calc(var(--base) * 2);
+    @include large-break{
+        grid-template-columns: 100%;
+        gap: calc(var(--base) * 2);
+    }
+}
+// .products:first-child {
+// border: solid 1px white;
+
+// }
+// .products:last-child {
+//     border: solid 1px white;
+    
+//     }

@@ -1,0 +1,98 @@
+@import "../../_css/common";
+
+.recoversection{
+  // border: white solid 2px;
+  display: grid;
+  grid-template-columns: 1fr 50% 1fr;
+  height: 100vh;
+  width: 100%;
+
+  // @include large-break {
+  //   grid-template-columns: 1fr 40% 1fr;
+  // }
+  @include mid-break {
+    grid-template-columns: 1fr 70% 1fr;
+  }
+  @include small-break {
+    grid-template-columns: 1fr 90% 1fr;
+  }
+
+  p {
+    color: var(--color-gray-500);
+  }
+}
+.rformWrapper{
+  // border: white solid 2px;
+  display: flex;
+  z-index: 10;
+  grid-column: 2;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 var(--base);
+  backdrop-filter: blur(35px);
+  background-color: rgba(0, 0, 0, 0.178);
+  box-shadow: 0 1px 2px 0 rgba(37, 37, 37, 0.456);
+
+  @include mid-break {
+    justify-content: center;
+  }
+  @include small-break {
+    justify-content: center;
+    padding: 0 0;
+  }
+}
+.rformContainer{
+  width: fit-content;
+  max-width: 700px;
+  padding:var(--base);
+  border-radius: 10px;
+  // border: white solid 2px;
+
+  @include mid-break {
+  }
+
+  @include small-break {
+    padding: 30px;
+  }
+}
+.heroImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: rotate(0deg);
+  background-image: url("/assets/images/logopage8.jpg");
+  opacity: 1;
+  // display: none;
+
+  @include mid-break {
+  
+    display: flex;
+    // display: none;
+    justify-content: center;
+  }
+}
+.logo{
+  margin-top: calc(var(--base) * 3);
+}
+.backArrow{
+  // border: white solid 2px;
+  width: fit-content;
+  align-items: center;
+  justify-content: flex-start;
+  display: flex;
+  flex-direction: row;
+  gap: calc(var(--base) / 1.5);
+  text-decoration: none;
+}
+.backArrow p{
+  font-size: var(--base);
+}

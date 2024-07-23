@@ -1,0 +1,25 @@
+.header {
+    padding: 1rem 0px;
+    z-index: 2;
+}
+.logoImg{
+    content: url("/dark-log-lg.webp");
+  
+}
+:global([data-theme='dark']) {
+    .logoImg{
+        content: url("/white-logo-no-sd.webp");
+      
+    }
+  }
+.wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: calc(var(--base)/ 2) var(base);
+    
+}
+.hide{
+    display: none;
+}

@@ -1,0 +1,35 @@
+@import "../../_css/common";
+
+.pagename{
+  width: 100%;
+max-width: 70%;
+@include mid-break {
+  max-width: 100%;
+}
+}
+
+.account {
+  margin-bottom: var(--block-padding);
+}
+
+.params {
+ 
+}
+
+.purchases {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--base);
+}
+
+.purchase {
+  > * {
+    margin: 0;
+  }
+}
+
+.noPurchases {
+  font-weight: 600;
+}

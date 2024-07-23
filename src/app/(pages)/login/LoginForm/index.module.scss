@@ -1,0 +1,60 @@
+@import "../../../_css/common";
+
+.form {
+  margin-bottom: var(--base);
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--base) / 2);
+  align-items: flex-start;
+  width: 100%;
+
+  @include mid-break {
+    width: 100%;
+  }
+}
+
+.submit {
+  width: 100%;
+  margin-top: calc(var(--base) / 2);
+  margin-bottom: calc(var(--base) / 2);
+  font-weight: 600;
+
+}
+.submit:hover {
+ cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.331) ;
+  backdrop-filter: blur(10px);
+  color: var(--color-base-0);
+  transition: all .3s;
+}
+.message {
+  margin-bottom: var(--base);
+  border-radius: 3px;
+  
+}
+.formlinksWapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  gap:  calc(var(--base) / 4);
+  @include small-break {
+   flex-direction: column;
+   font-weight: 600;
+  }
+}
+.formlinks{
+  width: fit-content;
+  outline-style: none;
+  text-decoration: none;
+  text-align:start;
+  padding: calc(var(--base) / 3) calc(var(--base) / 2);
+  color: var(--color-base-0);
+  border-bottom: solid transparent;
+  // border-radius: var(--base-r);
+
+}
+.formlinks:hover{
+  border-bottom: solid var(--color-base-0) 1px;
+transition: all .5s;
+}

@@ -1,0 +1,51 @@
+@import "../../../_css/common";
+
+.form {
+  margin-bottom: var(--base);
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--base) / 2);
+  align-items: flex-start;
+
+  @include mid-break {
+    width: 100%;
+  }
+}
+.formTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  width: 100%;
+
+  h3 {
+    margin: 0;
+
+    @include mid-break {
+      font-size: 34px;
+      margin-bottom: 8px;
+    }
+  }
+}
+.submit {
+  width: 100%;
+  margin-top: calc(var(--base) / 2);
+  margin-bottom: calc(var(--base) / 2);
+  font-weight: 600;
+
+}
+.submit:hover {
+ cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.331) ;
+  backdrop-filter: blur(10px);
+  color: var(--color-base-0);
+  transition: all .3s;
+}
+.message {
+  margin-bottom: var(--base);
+  border-radius: 3px;
+}
+
+.message {
+  margin-bottom: var(--base);
+}

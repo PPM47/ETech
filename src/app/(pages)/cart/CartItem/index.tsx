@@ -8,26 +8,29 @@ import { Media } from '../../../_components/Media'
 import { Price } from '../../../_components/Price'
 import Image from 'next/image'
 import { RemoveFromCartButton } from '../../../_components/RemoveFromCartButton'
-import { HR } from '../../../_components/HR'
 
 const CartItem = ({ product, title, metaImage, qty, addItemToCart }) => {
-  const [Qty, setQty] = useState(qty)
+  const [quantity, setQuantity] = useState(qty)
 
-  const decrQty = () => {
-    const updQty = Qty > 1 ? Qty - 1 : 1
-    setQty(updQty)
-    addItemToCart({ product, Qty: Number(updQty) })
+  const decrementQty = () => {
+    const updatedQty = quantity > 1 ? quantity - 1 : 1
+
+    setQuantity(updatedQty)
+    addItemToCart({ product, quantity: Number(updatedQty) })
   }
-  const incrQty = () => {
-    const updQty = Qty + 1
-    setQty(updQty)
-    addItemToCart({ product, Qty: Number(updQty) })
+
+  const incrementQty = () => {
+    const updatedQty = quantity + 1
+
+    setQuantity(updatedQty)
+    addItemToCart({ product, quantity: Number(updatedQty) })
   }
+
   const enterQty = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const updQty = Number(e.target.value)
+    const updatedQty = Number(e.target.value)
 
-    setQty(updQty)
-    addItemToCart({ product, Qty: Number(updQty) })
+    setQuantity(updatedQty)
+    addItemToCart({ product, quantity: Number(updatedQty) })
   }
 
   return (
@@ -50,7 +53,7 @@ const CartItem = ({ product, title, metaImage, qty, addItemToCart }) => {
             <Price product={product} button={false} />
           </div>
           <div className={classes.quantity}>
-            <div className={classes.quantityBtn} onClick={decrQty}>
+            <div className={classes.quantityBtn} onClick={decrementQty}>
               <Image
                 src="/assets/icons/minus.svg"
                 alt="minus"
@@ -59,8 +62,8 @@ const CartItem = ({ product, title, metaImage, qty, addItemToCart }) => {
                 className={classes.qtyBtn}
               />
             </div>
-            <input type="text" className={classes.quantityInput} value={Qty} onChange={enterQty} />
-            <div className={classes.quantityBtn} onClick={incrQty}>
+            <input type="text" className={classes.quantityInput} value={quantity} onChange={enterQty} />
+            <div className={classes.quantityBtn} onClick={incrementQty}>
               <Image
                 src="/assets/icons/plus.svg"
                 alt="plus"
@@ -71,7 +74,7 @@ const CartItem = ({ product, title, metaImage, qty, addItemToCart }) => {
             </div>
           </div>
           <div className={classes.subtotalWrapper}>
-            <Price product={product} button={false} quantity={Qty} />
+            <Price product={product} button={false} quantity={quantity} />
             <RemoveFromCartButton product={product} />
           </div>
         </div>

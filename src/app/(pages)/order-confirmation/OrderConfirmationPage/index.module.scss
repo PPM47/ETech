@@ -1,7 +1,30 @@
-@import '../../../_css/common';
 
+@import '../../../_css/common';
+.orderConfiSec{
+  
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--base);
+}
 .actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: calc(var(--base) / 2);
+}
+.pribtn{
+    background-color: rgba(178, 178, 178, 0.265) !important;
+}
+.pribtn:hover{
+  background-color: rgba(71, 71, 71, 0.265) !important;
+}
+.secbtn{
+  background-color: rgba(0, 0, 0, 0.265) !important;
+}
+.secbtn:hover{
+background-color: rgba(38, 38, 38, 0.41) !important;
 }

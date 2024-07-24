@@ -1,4 +1,4 @@
-@import "../../../_css/common";
+@import '../../../_css/common';
 
 .form {
   margin-bottom: var(--base);
@@ -7,11 +7,9 @@
   gap: calc(var(--base) / 2);
   align-items: flex-start;
   width: 100%;
-  max-width: 70%;
 
   @include mid-break {
     width: 100%;
-    max-width: 100%;
   }
 }
 
@@ -22,14 +20,5 @@
 }
 
 .submit {
-  width: fit-content;
   margin-top: calc(var(--base) / 2);
-  border: 2px solid var(--color-base-0) ;
-  background-color: var(--primary);
-  font-weight: 600;
 }
-.submit:hover {
-  background-color: rgba(119, 119, 119, 0.349);
-   color: var(--color-base-0);
-   transition: all .4s;
- }

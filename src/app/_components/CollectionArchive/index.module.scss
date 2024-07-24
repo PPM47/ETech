@@ -41,9 +41,14 @@
 }
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(30%, 1fr));
+  grid-template-columns: repeat(4, minmax(20%, 1fr));
   gap: var(--base) 20px;
+  @include large-break {
+    grid-template-columns: repeat(3, minmax(20%, 1fr));
+    gap: var(--base);
+  }
   @include mid-break {
+    grid-template-columns: repeat(3, minmax(10%, 1fr));
     gap: var(--base);
   }
   @include small-break {

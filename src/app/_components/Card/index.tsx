@@ -77,11 +77,11 @@ export const Card: React.FC<{
       <div className={classes.content}>
        
         {titleToUse && 
-          <h4 className={classes.title}>
+          <h5 className={classes.title}>
             <Link href={href} className={classes.titleLink}>
               {titleToUse}
             </Link>
-          </h4>
+          </h5>
         }
         {description && (
           <div className={classes.body}>

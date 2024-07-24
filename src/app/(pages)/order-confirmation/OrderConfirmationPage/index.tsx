@@ -26,7 +26,7 @@ export const OrderConfirmationPage: React.FC<{}> = () => {
         <Fragment>
           <Message error={error} />
           <p>
-            {`Your payment was successful but there was an error processing your order. Please contact us to resolve this issue.`}
+            {`Your payment was successful but there was an error processing your order.Please contact us to resolve this issue.`}
           </p>
           <div className={classes.actions}>
             <Button href="/account" label="View account" appearance="primary" />
@@ -39,18 +39,21 @@ export const OrderConfirmationPage: React.FC<{}> = () => {
         </Fragment>
       ) : (
         <Fragment>
-          <h1>Thank you for your order!</h1>
-          <p>
-            {`Your order has been confirmed. You will receive an email confirmation shortly. Your order ID is ${orderID}.`}
-          </p>
-          <div className={classes.actions}>
-            <Button href={`/orders/${orderID}`} label="View order" appearance="primary" />
-            <Button
-              href={`${process.env.NEXT_PUBLIC_SERVER_URL}/orders`}
-              label="View all orders"
-              appearance="secondary"
-            />
-          </div>
+          <section className={classes.orderConfiSec}>
+            <h1>Thank you for your order!</h1>
+            <p>
+              {`Your order has been confirmed. You will receive an email confirmation shortly. Your order ID is ${orderID}.`}
+            </p>
+            <div className={classes.actions}>
+              <Button href={`/account/orders/${orderID}`} label="View order" appearance="primary"  className={classes.pribtn}/>
+              <Button
+                href={`${process.env.NEXT_PUBLIC_SERVER_URL}/account/orders`}
+                label="View all orders"
+                appearance="secondary"
+                className={classes.secbtn}
+              />
+            </div>
+          </section>
         </Fragment>
       )}
     </div>

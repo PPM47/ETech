@@ -1,3 +1,4 @@
+@import '../../_css/common';
 .cartLink {
   cursor: pointer;
   display: flex;
@@ -5,5 +6,27 @@
 }
 
 .quantity {
+  position: relative;
+  z-index: 2;
+transform: translateX(-4px) translateY(-12px);
   margin-left: 2px;
+}
+.quantity::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 7px;
+  left: -6px;
+  width: 15px;
+  height: 15px;
+  border: solid 2px white;
+  border-radius: 10px 10px 10px 10px;
+  @include mid-break{
+    top: 2px;
+    left: -6px;
+  }
+  @include small-break{
+    top: 2px;
+    left: -6px;
+  }
 }

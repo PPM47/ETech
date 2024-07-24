@@ -27,7 +27,6 @@ export const HeaderNav: React.FC<{ header: HeaderType }> = ({ header }) => {
       {navItems.map(({ link }, i) => {
         return <CMSLink key={i} {...link} appearance="none" />
       })}
-      <CartLink />
       {user && <Link href="/account">Account</Link>}
       {!user && (
         <Button 
@@ -39,6 +38,7 @@ export const HeaderNav: React.FC<{ header: HeaderType }> = ({ header }) => {
         className={classes.submit}
         />
       )}
+       {user && <CartLink />}
     </nav>
   )
 }

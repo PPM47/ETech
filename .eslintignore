@@ -1,0 +1,17 @@
+# Node modules
+node_modules/
+
+# Build output
+.next/
+build/
+
+# Test coverage
+coverage/
+
+# Temporary files
+*.log
+*.tmp
+
+# Ignore specific files or directories
+src/app/(pages)/[slug]/page.tsx
+src/app/(pages)/account/layout.tsx

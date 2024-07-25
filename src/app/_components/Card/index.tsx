@@ -75,14 +75,13 @@ export const Card: React.FC<{
         )}
       </div>
       <div className={classes.content}>
-       
-        {titleToUse && 
+        {titleToUse && (
           <h5 className={classes.title}>
             <Link href={href} className={classes.titleLink}>
               {titleToUse}
             </Link>
           </h5>
-        }
+        )}
         {description && (
           <div className={classes.body}>
             {description && <p className={classes.description}>{sanitizedDescription}</p>}

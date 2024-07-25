@@ -53,8 +53,8 @@ export const RecoverPasswordForm: React.FC = () => {
         <React.Fragment>
           <h1>Recover Password</h1>
           <div className={classes.formWrapper}>
-          <p>Enter your registered email address. we'll send you a code to reset your password</p>
-          <RenderParams className={classes.params} />
+            <p>Enter your registered email address. we'll send you a code to reset your password</p>
+            <RenderParams className={classes.params} />
             <form onSubmit={handleSubmit(onSubmit)} className={classes.form}>
               <Message error={error} className={classes.message} />
               <Input

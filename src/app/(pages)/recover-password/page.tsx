@@ -14,16 +14,8 @@ export default async function RecoverPassword() {
       <div className={classes.heroImg} />
       <div className={classes.rformWrapper}>
         <div className={classes.rformContainer}>
-          <Link
-          href="/login"
-          className={classes.backArrow}
-          >
-            <Image
-            src="/assets/icons/arrow-left.svg"
-            alt="back Arrow"
-            width={30}
-            height={30}
-            />
+          <Link href="/login" className={classes.backArrow}>
+            <Image src="/assets/icons/arrow-left.svg" alt="back Arrow" width={30} height={30} />
             <p>Back</p>
           </Link>
           <Link href="/">

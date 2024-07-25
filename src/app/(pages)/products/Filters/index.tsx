@@ -12,12 +12,11 @@ import { RadioButton } from '../../../_components/RedioButton'
 const Filters = ({ categories }: { categories: Category[] }) => {
   const { catFilters, sort, setCatFilters, setSort } = useFilter()
 
-  const handleCat = (categoryId: string )=> {
+  const handleCat = (categoryId: string) => {
     if (catFilters.includes(categoryId)) {
       const updateCat = catFilters.filter(id => id !== categoryId)
       setCatFilters(updateCat)
-    }
-    else {
+    } else {
       setCatFilters([...catFilters, categoryId])
     }
   }
@@ -25,7 +24,6 @@ const Filters = ({ categories }: { categories: Category[] }) => {
 
   return (
     <div className={classes.filterMain}>
-     
       <div className={classes.filters}>
         <div>
           <h5 className={classes.title}>Sort & Filter </h5>
@@ -44,10 +42,9 @@ const Filters = ({ categories }: { categories: Category[] }) => {
             )
           })}
         </div>
-        </div>
-        <HR />
-        <div className={classes.radio}>
-        
+      </div>
+      <HR />
+      <div className={classes.radio}>
         <div>
           <h6 className={classes.title}>Sort By</h6>
         </div>
@@ -67,7 +64,7 @@ const Filters = ({ categories }: { categories: Category[] }) => {
             groupName="sort"
           />
         </div>
-        </div>
+      </div>
     </div>
   )
 }

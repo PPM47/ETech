@@ -18,7 +18,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className={classes.account}>
           <div className={classes.nav}>
             <UserInfo />
-            <div className={classes.hr}/>
+            <div className={classes.hr} />
             <ul className={classes.navul}>
               {profileNavItems.map(item => (
                 <li key={item.title}>
@@ -30,7 +30,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               ))}
             </ul>
           </div>
-          <div className={classes.hr1}/>
+          <div className={classes.hr1} />
           {children}
         </div>
         <ContinueShopping />

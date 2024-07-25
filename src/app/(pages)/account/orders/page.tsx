@@ -77,7 +77,7 @@ export default async function Orders() {
                   href={`/account/orders/${order.id}`}
                 />
               </Link>
-              <div className={classes.hr}/>
+              <div className={classes.hr} />
             </li>
           ))}
         </ul>

@@ -62,11 +62,10 @@ export const CartPage: React.FC<{
                 <div className={classes.bottomline}>
                   <p>Products</p>
                   <p>{`${cart.items.length} `}</p>
-                  </div>
+                </div>
                 <div className={classes.header}>
                   <p>Products</p>
                   <div className={classes.headerItemDetails}>
-                    
                     <p>Quantity</p>
                   </div>
                   <p className={classes.headersubtotal}>Subtotal</p>

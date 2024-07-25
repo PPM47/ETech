@@ -10,9 +10,8 @@ const Promotion = () => {
     hours: 0,
     minutes: 0,
     seconds: 0,
-  }
-)
-const TimeBox = ({ lable, value }: { lable: string; value: number }) => (
+  })
+  const TimeBox = ({ lable, value }: { lable: string; value: number }) => (
     <li className={classes.timeBox}>
       <h3>{value}</h3>
       <p>{lable}</p>
@@ -57,8 +56,8 @@ const TimeBox = ({ lable, value }: { lable: string; value: number }) => (
             Discounts, and Exclusive Savings. Shop Now and Don't Miss Out!
           </p>
           <Link href="/products" className={classes.showAllLink}>
-          Show All
-        </Link>
+            Show All
+          </Link>
         </div>
         <div className={classes.promoTimeCard}>
           <ul className={classes.promoCardList}>
@@ -71,7 +70,6 @@ const TimeBox = ({ lable, value }: { lable: string; value: number }) => (
       </div>
     </section>
   )
-
 }
 
 export default Promotion

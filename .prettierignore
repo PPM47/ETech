@@ -1,1 +1,28 @@
 **/payload-types.ts
+# Ignore artifacts:
+build
+coverage
+node_modules
+
+# Ignore all JSON files in the .next directory
+.next/**/*.json
+
+# Ignore specific files
+.next/app-build-manifest.json
+.next/build-manifest.json
+.next/cache/fetch-cache/tags-manifest.json
+.next/package.json
+.next/server/middleware-manifest.json
+.next/server/next-font-manifest.json
+.next/server/server-reference-manifest.json
+.next/types/package.json
+
+# Ignore specific files in the .vscode directory
+.vscode/extensions.json
+.vscode/launch.json
+
+# Ignore all files in the build directory
+build
+
+# Ignore all HTML files in the build directory
+build/**/*.html

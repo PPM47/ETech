@@ -11,8 +11,7 @@ import { Footer, Media } from '../../../../payload/payload-types'
 import { Button } from '../../Button'
 // import { ThemeSelector } from '../../../_providers/Theme/ThemeSelector'
 
-
-const FooterComponent = ({footer} : {footer: Footer}) => {
+const FooterComponent = ({ footer }: { footer: Footer }) => {
   const pathname = usePathname()
   const navItems = footer?.navItems || []
   return (
@@ -38,34 +37,32 @@ const FooterComponent = ({footer} : {footer: Footer}) => {
         <Gutter>
           <div className={classes.wrap}>
             <Link href="/">
-            <Image
-            src="/white-logo-no-sd.webp"
-            alt='logo'
-            width={140}
-            height={40}
-            className={classes.logo}
-            />
+              <Image
+                src="/white-logo-no-sd.webp"
+                alt="logo"
+                width={140}
+                height={40}
+                className={classes.logo}
+              />
             </Link>
             <div className={classes.socialLinks}>
-              {navItems.map((item) => {
+              {navItems.map(item => {
                 const icon = item?.link?.icon as Media
                 return (
                   <Button
-                  key={item.link.label}
-                  el="link"
-                  href={item.link.url}
-                  newTab={true}
-                  className={classes.socialLinkItem}
+                    key={item.link.label}
+                    el="link"
+                    href={item.link.url}
+                    newTab={true}
+                    className={classes.socialLinkItem}
                   >
-                   <Image
-                   src={icon?.url}
-                   alt='item.link.label'
-                    width={24}
-                    height={24}
-                    className={classes.socialIcon}
-                   >
-                    
-                   </Image>
+                    <Image
+                      src={icon?.url}
+                      alt="item.link.label"
+                      width={24}
+                      height={24}
+                      className={classes.socialIcon}
+                    ></Image>
                   </Button>
                 )
               })}
@@ -75,10 +72,8 @@ const FooterComponent = ({footer} : {footer: Footer}) => {
             <ThemeSelector />
             </div> */}
           </div>
-          
         </Gutter>
       </div>
-      
     </footer>
   )
 }

@@ -23,7 +23,7 @@ export default async function CreateAccount() {
       <div className={classes.heroImg} />
       <div className={classes.formWrapper}>
         <div className={classes.formContainer}>
-        <Link href="/">
+          <Link href="/">
             <Image
               src="/white-logo-no-sd.webp"
               alt="logo"

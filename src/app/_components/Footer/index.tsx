@@ -1,11 +1,8 @@
-
 import React from 'react'
-import { fetchFooter} from '../../_api/fetchGlobals'
+import { fetchFooter } from '../../_api/fetchGlobals'
 import FooterComponent from './FooterComponent'
 import { Footer } from '../../../payload/payload-types'
 // import { ThemeSelector } from '../../_providers/Theme/ThemeSelector'
-
-
 
 export async function Footer() {
   let footer: Footer | null = null
@@ -21,8 +18,8 @@ export async function Footer() {
   // })}
   const navItems = footer?.navItems || []
   return (
-    <> 
-        <FooterComponent footer={footer}/>
+    <>
+      <FooterComponent footer={footer} />
     </>
   )
 }

@@ -52,7 +52,7 @@ export default async function Orders() {
       {(!orders || !Array.isArray(orders) || orders?.length === 0) && (
         <p className={classes.noOrders}>You have no orders.</p>
       )}
-  
+
       {orders && orders.length > 0 && (
         <ul className={classes.ordersList}>
           {orders?.map((order, index) => (

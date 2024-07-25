@@ -45,13 +45,11 @@ export default async function Order({ params: { id } }) {
 
   return (
     <section>
-
-
       <div className={classes.itemMeta}>
-      <h5>
-        {`Order`}
-        <span className={classes.id}>{` ${order.id}`}</span>
-      </h5>
+        <h5>
+          {`Order`}
+          <span className={classes.id}>{` ${order.id}`}</span>
+        </h5>
         <div className={classes.orderDListItem}>
           <p className={classes.itemsh}>Order ID :-</p>
           <p>{`${order.id}`}</p>

@@ -29,7 +29,7 @@ const products = async () => {
   return (
     <section className={classes.proContiner}>
       <Gutter className={classes.products}>
-        <Filters  categories={categories}/>
+        <Filters categories={categories} />
         <Blocks blocks={page.layout} disableTopPadding={true} />
       </Gutter>
       <Gutter>

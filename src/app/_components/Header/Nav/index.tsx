@@ -16,29 +16,22 @@ export const HeaderNav: React.FC<{ header: HeaderType }> = ({ header }) => {
   const { user } = useAuth()
 
   return (
-    <nav
-      className={[
-        classes.nav,
-         user === undefined && classes.hide,
-      ]
-        .filter(Boolean)
-        .join(' ')}
-    >
+    <nav className={[classes.nav, user === undefined && classes.hide].filter(Boolean).join(' ')}>
       {navItems.map(({ link }, i) => {
         return <CMSLink key={i} {...link} appearance="none" />
       })}
       {user && <Link href="/account">Profile</Link>}
       {!user && (
-        <Button 
-        el='link'
-        href='/login'
-        label='Login'
-        appearance='primary'
-        onClick={() => (window.location.href = '/login')}
-        className={classes.submit}
+        <Button
+          el="link"
+          href="/login"
+          label="Login"
+          appearance="primary"
+          onClick={() => (window.location.href = '/login')}
+          className={classes.submit}
         />
       )}
-       {user && <CartLink />}
+      {user && <CartLink />}
     </nav>
   )
 }

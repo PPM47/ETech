@@ -12,7 +12,10 @@ const ContinueShopping = () => {
         </div>
         <div className={classes.ConShopText}>
           <p>
-          Continue browsing our top tech products, including the latest laptops, computers, and accessories. Discover cutting-edge technology and unbeatable deals designed to enhance your digital experience. Keep shopping to find the perfect tech solutions for your needs.
+            Continue browsing our top tech products, including the latest laptops, computers, and
+            accessories. Discover cutting-edge technology and unbeatable deals designed to enhance
+            your digital experience. Keep shopping to find the perfect tech solutions for your
+            needs.
           </p>
         </div>
       </div>

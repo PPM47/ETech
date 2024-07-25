@@ -65,7 +65,7 @@ const CreateAccountForm: React.FC = () => {
         clearTimeout(timer)
         if (redirect) router.push(redirect as string)
         else router.push('/')
-      window.location.href=('/')
+        window.location.href = '/'
       } catch (_) {
         clearTimeout(timer)
         setError('There was an error with the credentials provided. Please try again.')
@@ -78,7 +78,9 @@ const CreateAccountForm: React.FC = () => {
     <form onSubmit={handleSubmit(onSubmit)} className={classes.form}>
       <div className={classes.formTitle}>
         <h3>Welcome </h3>
-        <p>Create new account today to enjoy the benefits of a personalized shopping experience. </p>
+        <p>
+          Create new account today to enjoy the benefits of a personalized shopping experience.{' '}
+        </p>
         {/* <Image src="/assets/icons/hand.png" alt="hand" width={30} height={30} /> */}
       </div>
       <Message error={error} className={classes.message} />
@@ -90,7 +92,7 @@ const CreateAccountForm: React.FC = () => {
         error={errors.email}
         type="email"
       />
-        <Input
+      <Input
         name="name"
         label="Full Name"
         required
@@ -115,7 +117,10 @@ const CreateAccountForm: React.FC = () => {
         validate={value => value === password.current || 'The passwords do not match'}
         error={errors.passwordConfirm}
       />
-      <p>Your personal data will be used to support your experience throughout this website, to manage access to your account.</p>
+      <p>
+        Your personal data will be used to support your experience throughout this website, to
+        manage access to your account.
+      </p>
       <Button
         type="submit"
         label={loading ? 'Processing' : 'Create Account'}

@@ -1,8 +1,8 @@
 'use client'
+
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import classes from './index.module.scss'
-import { Button } from 'payload/components'
 
 const Promotion = () => {
   const [time, setTime] = useState({
@@ -11,14 +11,16 @@ const Promotion = () => {
     minutes: 0,
     seconds: 0,
   })
-  const TimeBox = ({ lable, value }: { lable: string; value: number }) => (
+
+  const TimeBox = ({ label, value }: { label: string; value: number }) => (
     <li className={classes.timeBox}>
       <h3>{value}</h3>
-      <p>{lable}</p>
+      <p>{label}</p>
     </li>
   )
 
   const targetDate = new Date()
+  const targetDate2 = 3
   targetDate.setDate(targetDate.getDate() + 3)
 
   useEffect(() => {
@@ -42,7 +44,7 @@ const Promotion = () => {
     return () => {
       clearInterval(timerInterval) // Cleanup the interval when the component unmounts.
     }
-  }, [])
+  }, [targetDate2])
 
   return (
     <section className={classes.promotionSection}>
@@ -61,10 +63,10 @@ const Promotion = () => {
         </div>
         <div className={classes.promoTimeCard}>
           <ul className={classes.promoCardList}>
-            <TimeBox lable="Day" value={time.days} />
-            <TimeBox lable="Hour" value={time.hours} />
-            <TimeBox lable="Minute" value={time.minutes} />
-            <TimeBox lable="Second" value={time.seconds} />
+            <TimeBox label="Day" value={time.days} />
+            <TimeBox label="Hour" value={time.hours} />
+            <TimeBox label="Minute" value={time.minutes} />
+            <TimeBox label="Second" value={time.seconds} />
           </ul>
         </div>
       </div>

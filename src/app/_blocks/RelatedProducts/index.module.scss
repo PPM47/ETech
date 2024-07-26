@@ -11,14 +11,21 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(30%, 1fr));
-  gap: var(--base) 20px;
-  @include mid-break {
-    gap: var(--base);
+  gap: var(--base);
+  padding: 0;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  justify-items:center;
+//   @include large-break {
+//     grid-template-columns: 1fr 1fr 1fr 1fr;
+// }
+  @include large-break {
+      grid-template-columns: 1fr 1fr 1fr;
   }
   @include small-break {
-    grid-template-columns: 100%;
-    justify-items: center;
+      grid-template-columns: 1fr 1fr;
+  }
+  @include extra-small-break {
+      grid-template-columns: 1fr;
   }
 }
 

@@ -41,7 +41,7 @@ export const OrderConfirmationPage: React.FC<{}> = () => {
         <Fragment>
           <section className={classes.orderConfiSec}>
             <h1>Thank you for your order!</h1>
-            <p>
+            <p className={classes.orderConfiSec_p}>
               {`Your order has been confirmed. You will receive an email confirmation shortly. Your order ID is ${orderID}.`}
             </p>
             <div className={classes.actions}>

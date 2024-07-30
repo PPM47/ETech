@@ -128,9 +128,9 @@ const CreateAccountForm: React.FC = () => {
         appearance="primary"
         className={classes.submit}
       />
-      <div>
-        {'Already have an account? '}
-        <Link href={`/login${allParams}`}>Login</Link>
+      <div className={classes.arhaLink}>
+        
+        <Link href={`/login${allParams}`}>{'Already have an account? '}Login</Link>
       </div>
     </form>
   )

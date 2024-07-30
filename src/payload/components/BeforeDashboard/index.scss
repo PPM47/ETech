@@ -22,3 +22,12 @@
 		opacity: 0.85;
 	}
 }
+.before-dashboard {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.logoimage{
+	margin-bottom: var(--base);
+}

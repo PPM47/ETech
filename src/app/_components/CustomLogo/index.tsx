@@ -3,12 +3,13 @@ import classes from './index.module.scss'
 import Image from 'next/image';
 
 export const CustomLogo = () => (
-  <div className="logo">
+  <div className={classes.logo}>
     <Image
-      src="/assets/tabico.webp"
+      src="/white-logo.webp"
       alt="TRBL Design Logo"
-      width={40}
-      height={40}
+      width={190}
+      height={90}
     />
+
   </div>
 );

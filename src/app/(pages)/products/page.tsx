@@ -8,6 +8,7 @@ import { fetchDoc } from '../../_api/fetchDoc'
 import { draftMode } from 'next/headers'
 import { fetchDocs } from '../../_api/fetchDocs'
 import { HR } from '../../_components/HR'
+// import ProductSearchBar from './Search'
 
 const products = async () => {
   const { isEnabled: isDraftMode } = draftMode()
@@ -28,6 +29,9 @@ const products = async () => {
 
   return (
     <section className={classes.proContiner}>
+      {/* <Gutter>
+        <ProductSearchBar/>
+      </Gutter> */}
       <Gutter className={classes.products}>
         <Filters categories={categories} />
         <Blocks blocks={page.layout} disableTopPadding={true} />

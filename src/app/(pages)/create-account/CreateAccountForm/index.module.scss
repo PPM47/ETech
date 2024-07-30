@@ -38,7 +38,8 @@
  cursor: pointer;
   background-color: rgba(0, 0, 0, 0.331) ;
   backdrop-filter: blur(10px);
-  color: var(--color-base-0);
+  border: solid 2px  var(--color-base-200);
+  color: var(--color-base-100);
   transition: all .3s;
 }
 .message {
@@ -48,4 +49,7 @@
 
 .message {
   margin-bottom: var(--base);
+}
+.arhaLink:hover{
+  border-bottom: solid 1px var(--color-base-0);
 }

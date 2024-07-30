@@ -10,6 +10,7 @@ import { slateEditor } from '@payloadcms/richtext-slate'
 import dotenv from 'dotenv'
 import path from 'path'
 import { buildConfig } from 'payload/config'
+import search from '@payloadcms/plugin-search'
 
 import Categories from './collections/Categories'
 import { Media } from './collections/Media'
@@ -28,7 +29,10 @@ import { Header } from './globals/Header'
 import { Settings } from './globals/Settings'
 import { priceUpdated } from './stripe/webhooks/priceUpdated'
 import { productUpdated } from './stripe/webhooks/productUpdated'
-import { CustomLogo } from '../app/_components/Logo'
+import { CustomLogo } from '../app/_components/CustomLogo'
+import { ProductSearchHandler } from './custom-endpoints/ProductSearchHandler'
+
+
 
 const generateTitle: GenerateTitle = () => {
   return 'My Store'
@@ -41,6 +45,7 @@ dotenv.config({
 })
 
 export default buildConfig({
+  
   admin: {
     meta: {
       titleSuffix: '- ETech-Admin',
@@ -50,6 +55,9 @@ export default buildConfig({
     user: Users.slug,
     bundler: webpackBundler(),
     components: {
+      graphics: {
+        Logo: CustomLogo,
+      },
       beforeLogin: [BeforeLogin],
       beforeDashboard: [BeforeDashboard],
     },
@@ -111,6 +119,11 @@ export default buildConfig({
       method: 'get',
       handler: productsProxy,
     },
+    {
+      path: '/search',
+      method: 'get',
+      handler: ProductSearchHandler,
+    },
     // The seed endpoint is used to populate the database with some example data
     // You should delete this endpoint before deploying your site to production
     {
@@ -119,6 +132,7 @@ export default buildConfig({
       handler: seed,
     },
   ],
+  
   plugins: [
     stripePlugin({
       stripeSecretKey: process.env.STRIPE_SECRET_KEY || '',
@@ -141,6 +155,12 @@ export default buildConfig({
       collections: ['pages', 'products'],
       generateTitle,
       uploadsCollection: 'media',
+    }),
+    search({
+      collections: ['products'],
+      defaultPriorities: {
+        Products: 20,
+      },
     }),
     payloadCloud(),
   ],

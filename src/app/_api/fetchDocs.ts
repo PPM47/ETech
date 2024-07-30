@@ -1,4 +1,3 @@
-import { query } from 'express'
 import type { RequestCookie } from 'next/dist/compiled/@edge-runtime/cookies'
 
 import type { Config } from '../../payload/payload-types'

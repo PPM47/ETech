@@ -8,7 +8,17 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
   gap: var(--base);
+  @include small-break{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+ 
+}
+.orderConfiSec_p{
+  max-width: 400px;
 }
 .actions {
   display: flex;

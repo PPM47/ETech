@@ -12,6 +12,7 @@ import { beforeProductChange } from './hooks/beforeChange'
 import { deleteProductFromCarts } from './hooks/deleteProductFromCarts'
 import { revalidateProduct } from './hooks/revalidateProduct'
 import { ProductSelect } from './ui/ProductSelect'
+import payload from 'payload'
 
 const Products: CollectionConfig = {
   slug: 'products',
@@ -153,6 +154,28 @@ const Products: CollectionConfig = {
       },
     },
   ],
+  endpoints: [
+    {
+      path: '/search',
+      method: 'get',
+      handler: async (req, res, next) => {
+        try {
+          const searchQuery = req.query.q;
+          const results = await payload.find({
+            collection: 'products',
+            where: {
+              _fullText: {
+                like: `%${searchQuery}%`
+              }
+            }
+          });
+          res.status(200).json(results);
+        } catch (error) {
+          next(error);
+        }
+      }
+    }
+  ]
 }
 
 export default Products

@@ -27,6 +27,7 @@ export interface Config {
     categories: Category;
     users: User;
     redirects: Redirect;
+    search: Search;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
   };
@@ -481,6 +482,26 @@ export interface Redirect {
         } | null);
     url?: string | null;
   };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "search".
+ */
+export interface Search {
+  id: string;
+  title?: string | null;
+  priority?: number | null;
+  doc:
+    | {
+        relationTo: 'pages';
+        value: string | Page;
+      }
+    | {
+        relationTo: 'products';
+        value: string | Product;
+      };
   updatedAt: string;
   createdAt: string;
 }

@@ -15,7 +15,7 @@ export const home: Partial<Page> = {
       {
         children: [
           {
-            text: 'Payload E-Commerce Store',
+            text: 'ETech Store',
           },
         ],
         type: 'h1',
@@ -31,7 +31,7 @@ export const home: Partial<Page> = {
             url: '/admin',
             children: [
               {
-                text: 'Visit the admin dashboard',
+                text: 'Visit the ETech admin dashboard',
               },
             ],
           },

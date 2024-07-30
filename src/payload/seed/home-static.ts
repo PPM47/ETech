@@ -24,7 +24,7 @@ export const staticHome: Page = {
       {
         children: [
           {
-            text: 'Welcome to your e-commerce store! ',
+            text: 'Welcome to your ETech store! ',
           },
           {
             text: 'Your database is currently empty.',
@@ -39,7 +39,7 @@ export const staticHome: Page = {
             url: '/admin',
             children: [
               {
-                text: 'log in to the admin dashboard',
+                text: 'log in to the ETech admin dashboard',
               },
             ],
           },
@@ -98,7 +98,7 @@ export const staticHome: Page = {
               url: '/admin',
               children: [
                 {
-                  text: 'log in to the admin dashboard',
+                  text: 'log in to the ETech admin dashboard',
                 },
               ],
             },

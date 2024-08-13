@@ -11,7 +11,7 @@
   // border: solid 1px white;
 
   @include mid-break {
-    padding-top: var(--gutter-h);
+    padding-top: calc(var(--base) * 3);
     padding-bottom: var(--gutter-h);
   }
 }

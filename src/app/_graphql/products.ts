@@ -11,7 +11,19 @@ export const PRODUCTS = `
     }
   }
 `
-
+export const ALLPRODUCTS = `
+  query Products {
+    Products(limit: 300) {
+      docs {
+        id
+        slug
+        title
+        ${META}
+        priceJSON
+      }
+    }
+  }
+`
 export const PRODUCT = `
   query Product($slug: String, $draft: Boolean) {
     Products(where: { slug: { equals: $slug}}, limit: 1, draft: $draft) {

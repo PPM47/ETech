@@ -1,44 +1,70 @@
-import React from 'react'
-import { Metadata } from 'next'
-import { draftMode } from 'next/headers'
-import { notFound } from 'next/navigation'
+import React from 'react';
+import { draftMode } from 'next/headers';
+import { notFound } from 'next/navigation';
 
-import { Product, Product as ProductType } from '../../../../payload/payload-types'
-import { fetchDoc } from '../../../_api/fetchDoc'
-import { fetchDocs } from '../../../_api/fetchDocs'
-import { Blocks } from '../../../_components/Blocks'
-import { ProductHero } from '../../../_heros/Product'
-import { generateMeta } from '../../../_utilities/generateMeta'
+import { Product, Product as ProductType } from '../../../../payload/payload-types';
+import { fetchDoc } from '../../../_api/fetchDoc';
+import { recfetchDoc } from '../../../_api/recfetchDoc';
+import { Blocks } from '../../../_components/Blocks';
+import { ProductHero } from '../../../_heros/Product';
+import { computeRecommendations } from '../../../_utilities/recommendationLogic';
 
-// Force this page to be dynamic so that Next.js does not cache it
-// See the note in '../../../[slug]/page.tsx' about this
-export const dynamic = 'force-dynamic'
+export const dynamic = 'force-dynamic';
 
 export default async function Product({ params: { slug } }) {
-  const { isEnabled: isDraftMode } = draftMode()
+  const { isEnabled: isDraftMode } = draftMode();
 
-  let product: Product | null = null
+  let product = null;
 
   try {
     product = await fetchDoc<Product>({
       collection: 'products',
       slug,
       draft: isDraftMode,
-    })
+    });
+    // console.log("Fetched product:", product);
   } catch (error) {
-    console.error(error) // eslint-disable-line no-console
+    console.error("Error fetching product:", error);
+    notFound(); // Handle the error as needed
   }
 
   if (!product) {
-    notFound()
+    notFound();
   }
 
-  const { relatedProducts } = product
+  // Ensure product has id or _id
+  if (!product.id && !product._id) {
+    throw new Error("Fetched product does not have a valid id or _id");
+  }
+
+  // Fetch all products
+  let allProducts = [];
+  try {
+    allProducts = await recfetchDoc<Product>('products');
+    // console.log("Fetched all products:", allProducts);
+  } catch (error) {
+    console.error("Error fetching all products:", error);
+    // Handle the error as needed
+  }
+
+  // Ensure allProducts is populated and has the correct structure
+  if (!Array.isArray(allProducts)) {
+    throw new Error("Fetched products data is not an array");
+  }
+  console.log("------------------------------------------------:", product.relatedProducts);
+  // Compute recommendations based on product ID
+  let recommendations = [];
+  try {
+    recommendations = computeRecommendations(allProducts, product.id);
+    console.log("Computed recommendations:", recommendations);
+  } catch (error) {
+    console.error("Error computing recommendations:", error);
+    // Handle the error as needed
+  }
 
   return (
     <>
       <ProductHero product={product} />
-      {/* {product?.enablePaywall && <PaywallBlocks productSlug={slug as string} disableTopPadding />} */}
       <Blocks
         disableTopPadding
         blocks={[
@@ -56,35 +82,32 @@ export default async function Product({ params: { slug } }) {
                 ],
               },
             ],
-            docs: relatedProducts,
+            docs: product.relatedProducts,
+          },
+        ]}
+      />
+      <h2>Recommended Products</h2>
+      <Blocks
+        disableTopPadding
+        blocks={[
+          {
+            blockType: 'recommendedProducts',
+            blockName: 'Recommended Product',
+            relationTo: 'products',
+            introContent: [
+              {
+                type: 'h4',
+                children: [
+                  {
+                    text: 'Recommended Products for You',
+                  },
+                ],
+              },
+            ],
+            docs: recommendations, // Pass the computed recommendations here
           },
         ]}
       />
     </>
-  )
-}
-
-export async function generateStaticParams() {
-  try {
-    const products = await fetchDocs<ProductType>('products')
-    return products?.map(({ slug }) => slug)
-  } catch (error) {
-    return []
-  }
-}
-
-export async function generateMetadata({ params: { slug } }): Promise<Metadata> {
-  const { isEnabled: isDraftMode } = draftMode()
-
-  let product: Product | null = null
-
-  try {
-    product = await fetchDoc<Product>({
-      collection: 'products',
-      slug,
-      draft: isDraftMode,
-    })
-  } catch (error) {}
-
-  return generateMeta({ doc: product })
+  );
 }

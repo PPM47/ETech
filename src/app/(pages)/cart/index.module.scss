@@ -3,7 +3,8 @@
 .cartContiner{
   margin-top: calc(var(--base) * 3);
   width: 100%;
+  // border: solid 1px white;
   @include small-break {
-    margin-top: var(--base);
+    margin-top: calc(var(--base) * 3);
   }
 }

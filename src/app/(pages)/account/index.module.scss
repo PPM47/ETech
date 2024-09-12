@@ -2,10 +2,10 @@
 
 .container {
   width: 100%;
-  margin-top: 100px;
+  margin-top: calc(var(--base) * 4);
 
   @include small-break {
-    margin-top: 30px;
+    margin-top: calc(var(--base) * 3);
   }
 }
 

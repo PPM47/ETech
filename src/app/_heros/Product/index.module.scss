@@ -1,12 +1,12 @@
 @import '../../_css/common';
 
 .productHero {
-  margin-top: calc(var(--base) * 3);
+  margin-top: calc(var(--base) * 5);
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
   width: 100%;
-  margin-bottom: calc(var(--base) * 2);
+  margin-bottom: calc(var(--base) * 3);
 
   @include small-break {
     grid-template-columns: 1fr;

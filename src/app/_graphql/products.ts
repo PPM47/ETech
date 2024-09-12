@@ -7,6 +7,7 @@ export const PRODUCTS = `
     Products(limit: 300) {
       docs {
         slug
+        priceJSON
       }
     }
   }
@@ -44,6 +45,7 @@ export const PRODUCT = `
           id
           slug
           title
+          priceJSON
           ${META}
         }
         ${META}

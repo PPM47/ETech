@@ -69,28 +69,6 @@ export default async function Product({ params: { slug } }) {
         disableTopPadding
         blocks={[
           {
-            blockType: 'relatedProducts',
-            blockName: 'Related Product',
-            relationTo: 'products',
-            introContent: [
-              {
-                type: 'h4',
-                children: [
-                  {
-                    text: 'Related Products',
-                  },
-                ],
-              },
-            ],
-            docs: product.relatedProducts,
-          },
-        ]}
-      />
-      <h2>Recommended Products</h2>
-      <Blocks
-        disableTopPadding
-        blocks={[
-          {
             blockType: 'recommendedProducts',
             blockName: 'Recommended Product',
             relationTo: 'products',
@@ -108,6 +86,28 @@ export default async function Product({ params: { slug } }) {
           },
         ]}
       />
+      <Blocks
+        disableTopPadding
+        blocks={[
+          {
+            blockType: 'relatedProducts',
+            blockName: 'Related Product',
+            relationTo: 'products',
+            introContent: [
+              {
+                type: 'h4',
+                children: [
+                  {
+                    text: 'Related Products',
+                  },
+                ],
+              },
+            ],
+            docs: product.relatedProducts,
+          },
+        ]}
+      />
+      
     </>
   );
 }

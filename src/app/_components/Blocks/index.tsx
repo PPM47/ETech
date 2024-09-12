@@ -6,6 +6,7 @@ import { CallToActionBlock } from '../../_blocks/CallToAction'
 import { ContentBlock } from '../../_blocks/Content'
 import { MediaBlock } from '../../_blocks/MediaBlock'
 import { RelatedProducts, type RelatedProductsProps } from '../../_blocks/RelatedProducts'
+import { RecommendedProducts, type RecommendedProductsProps } from '../../_blocks/RecommendedProducts'
 import { toKebabCase } from '../../_utilities/toKebabCase'
 import { BackgroundColor } from '../BackgroundColor/index'
 import { VerticalPadding, VerticalPaddingOptions } from '../VerticalPadding/index'
@@ -16,10 +17,11 @@ const blockComponents = {
   mediaBlock: MediaBlock,
   archive: ArchiveBlock,
   relatedProducts: RelatedProducts,
+  recommendedProducts: RecommendedProducts,
 }
 
 export const Blocks: React.FC<{
-  blocks: (Page['layout'][0] | RelatedProductsProps)[]
+  blocks: (Page['layout'][0] | RelatedProductsProps | RecommendedProductsProps)[]
   disableTopPadding?: boolean
 }> = props => {
   const { disableTopPadding, blocks } = props

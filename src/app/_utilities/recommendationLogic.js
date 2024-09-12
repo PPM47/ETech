@@ -57,7 +57,7 @@ export function computeRecommendations(products, productId) {
     });
 
     similarities.sort((a, b) => b.similarity - a.similarity);
-    const similarProducts = similarities.slice(0, 3).map(({ index }) => products[index]);
+    const similarProducts = similarities.slice(0, 5).map(({ index }) => products[index]);
 
     return similarProducts;
 }

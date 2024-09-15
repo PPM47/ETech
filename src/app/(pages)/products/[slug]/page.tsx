@@ -51,12 +51,12 @@ export default async function Product({ params: { slug } }) {
   if (!Array.isArray(allProducts)) {
     throw new Error("Fetched products data is not an array");
   }
-  console.log("------------------------------------------------:", product.relatedProducts);
+  // console.log("all related prodcts", product.relatedProducts);
   // Compute recommendations based on product ID
   let recommendations = [];
   try {
     recommendations = computeRecommendations(allProducts, product.id);
-    console.log("Computed recommendations:", recommendations);
+    // console.log("Computed recommendations:", recommendations);
   } catch (error) {
     console.error("Error computing recommendations:", error);
     // Handle the error as needed

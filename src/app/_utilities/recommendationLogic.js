@@ -1,5 +1,4 @@
 import natural from 'natural';
-
 // Function to compute the cosine similarity between two vectors
 function cosineSimilarity(vecA, vecB) {
   const dotProduct = vecA.reduce((sum, val, i) => sum + val * (vecB[i] || 0), 0);
@@ -7,11 +6,9 @@ function cosineSimilarity(vecA, vecB) {
   const magnitudeB = Math.sqrt(vecB.reduce((sum, val) => sum + val * val, 0));
   return magnitudeA && magnitudeB ? dotProduct / (magnitudeA * magnitudeB) : 0;
 }
-
 export function computeRecommendations(products, productId) {
     console.log("Product ID passed to function:", productId);
     // console.log("Products array:", products);
-
     // Check if product IDs are correctly populated
     const productIds = products.map((product) => product.id);
     console.log("Available Product IDs:", productIds);

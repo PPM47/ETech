@@ -8,6 +8,7 @@ import { Category } from '../../../../payload/payload-types'
 import { CheckBox } from '../../../_components/Checkbox'
 import { HR } from '../../../_components/HR'
 import { RadioButton } from '../../../_components/RedioButton'
+import SearchBar from '../../../_components/SearchBar/SearchBar';
 
 const Filters = ({ categories }: { categories: Category[] }) => {
   const { catFilters, sort, setCatFilters, setSort } = useFilter()
@@ -25,6 +26,7 @@ const Filters = ({ categories }: { categories: Category[] }) => {
   return (
     <div className={classes.filterMain}>
       <div className={classes.filters}>
+      {/* <SearchBar /> */}
         <div>
           <h5 className={classes.title}>Sort & Filter </h5>
         </div>

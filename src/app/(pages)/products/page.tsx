@@ -8,6 +8,7 @@ import { fetchDoc } from '../../_api/fetchDoc'
 import { draftMode } from 'next/headers'
 import { fetchDocs } from '../../_api/fetchDocs'
 import { HR } from '../../_components/HR'
+import Promotion from '../../_components/Promotion'
 // import ProductSearchBar from './Search'
 
 const products = async () => {
@@ -30,7 +31,7 @@ const products = async () => {
   return (
     <section className={classes.proContiner}>
       {/* <Gutter>
-        <ProductSearchBar/>
+        <Promotion/>
       </Gutter> */}
       <Gutter className={classes.products}>
         <Filters categories={categories} />

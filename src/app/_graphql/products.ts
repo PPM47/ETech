@@ -12,6 +12,19 @@ export const PRODUCTS = `
     }
   }
 `
+export const SEARCHPRO = `
+  query SearchProducts($keyword: String!) {
+    Products(where: { title: { contains: $keyword } }) {
+    docs {
+        id
+        slug
+        title
+        ${META}
+        priceJSON
+    }
+  }
+  }
+`
 export const ALLPRODUCTS = `
   query Products {
     Products(limit: 300) {
